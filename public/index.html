@@ -185,68 +185,6 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/01/test/">test</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/01/test/" class="archive-article-date">
-  	<time datetime="2020-02-01T11:06:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/01/test/">全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-happynewyear2020" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -519,6 +457,140 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/10/06/aeye/">全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-k210-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/13/k210-1/">嵌入式AI从入门到放肆【K210篇】-- 硬件与环境</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/13/k210-1/" class="archive-article-date">
+  	<time datetime="2019-09-13T14:31:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h2><p><strong>关注我的同学都知道，在搞项目方面我一点也不挑食，有啥玩啥，擅于给自己找麻烦。</strong></p>
+<p>由于个人本职工作是搞AI的，在不久之前的一个项目中，我用STM32制作了一个小模块，探讨了一下<code>“推理一个实用神经网络最低需要什么样的算力”</code>这个问题。项目的演示视频如下：</p>
+<div style="height: 0;padding-bottom:65%;position: relative;"><br><iframe width="760" height="510" src="//player.bilibili.com/player.html?aid=61175015&cid=106431941&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen style="position: absolute;height: 105%;width: 100%;"> </iframe><br></div>  
+
+
+
+<p><br></p>
+<blockquote>
+<p>基于Cortex-M的M4CNN模块 </p>
+</blockquote>
+<p>在那个项目中，我成功在<strong>主频只有不到100MHz，sram只有32K</strong>的单片机上推理了一个自己训练的CNN-SLR网络模型，效果甚至还不错。</p>
+<p>而这一次我准备来一波反向操作：尽可能用上算力最强的MCU，来看看在上面能跑多复杂的网络，<strong>因垂丝汀</strong>。</p>
+<blockquote>
+<p>注意，我这里指明了使用的是<strong>MCU</strong>，所以移动设备上的各种SoC就不在讨论范畴了，要说原因的话，是因为<strong>移动端SoC之间的battle过于激烈</strong>，这个讨论留作后话，在这一篇里面就暂时按下不表了；另一方面由于二者不在一个价位段，没有可比性。</p>
+</blockquote>
+<p>为了引出本篇要使用的MCU型号，首先我们来讨论一下嵌入式处理器的一个守恒定律，也即 <strong>功耗-价格-性能</strong> 不可兼得，如下图：</p>
+<p><img src="/img/k210-1-1.jpg" alt="img"></p>
+<blockquote>
+<p>“天下没有免费的处理器”</p>
+</blockquote>
+<p>稍微解释一下上图的话就是，由于物理定律限制我们可以认为：在其他条件一定的情况下，性能和功耗肯定成正比，更强的性能意味着更大的功耗也就会产生跟多的热量；而要想提升性能的同时还能保证功耗不变甚至更低的话，就只能改进芯片的架构或者改进制程工艺，这又会带来成本的提高。因而根据不同应用方向，我们可以选择兼顾其中两者的一些硬件平台：</p>
+<ul>
+<li><strong>成本低，性能弱，功耗也低</strong>：代表是各种单片机如STM32/AVR等。</li>
+<li><strong>成本低，性能强，但制程不高易发热</strong>：代表是各种低端SoC比如全志的H系列。</li>
+<li><strong>性能强，制程先进，但价格十分不友好，有钱还不一定给卖系列</strong>：代表是现在智能手机上使用的各种旗舰SoC，比如高通骁龙/海思麒麟/苹果A系。</li>
+</ul>
+<p>那难道真的就没有三者兼得的芯片平台了吗？</p>
+<p>其实还真有，本篇的主角<strong>K210</strong>就勉强算是一个，这也是我这次选择折腾这个项目的主要原因，接下来请听我仔细分析~</p>
+<h2 id="K210是个啥"><a href="#K210是个啥" class="headerlink" title="K210是个啥"></a><strong>K210是个啥</strong></h2><p>K210是由一家叫做嘉楠的曾经做<strong>挖矿芯片</strong>的公司在去年推出的一款MCU，其特色在于芯片架构中包含了一个自研的神经网络硬件加速器KPU，可以高性能地进行卷积神经网络运算。</p>
+<p><img src="/img/k210-1-2.jpg" alt="img"></p>
+<p>可不要以为MCU的性能就一定比不上高端SoC，至少在AI计算方面，K210的算力其实是相当可观的。根据嘉楠官方的描述，K210的KPU算力有0.8<em>TFLOPS</em> ，作为对比，拥有128个CUDA单元GPU的英伟达Jetson Nano的算力是0.47<em>TFLOPS</em> ；而最新的树莓派4只有不到0.1<em>TFLOPS</em> 。</p>
+<p>当然了，这个性能跟某些旗舰级别的SoC还是有差距的：A76级别的CPU本身就已经很变态，更何况旗舰SoC上面都会搭载用于AI加速的硬件用于异构运算，比如高通的Hexagon DSP、苹果的Neural Engine、华为的达芬奇架构NPU等等，这些NPU在某些应用下甚至能达到与数百W功耗的桌面级GPU接近的算力（顺便提一下GTX1080Ti的双精度浮点算力是11.3 <em>TFLOPS</em> ），可以说是丧心病狂了。</p>
+<blockquote>
+<p>值得注意的是，芯片的算力不一定和模型推理速度成正比，嵌入式AI的另一个核心是inference框架。对于CPU架构来说，是否使用SIMD（ARM从v7开始就支持NEON指令了）、是否使用多核多线程、是否有高效的卷积实现方式、是否有做汇编优化等等都会极大影响模型运行速度；而对DSP/NPU等硬件架构来说，是否对模型进行量化推理、量化的方式、访存的优化等也会有很大影响。</p>
+</blockquote>
+<p><strong>K210的其他参数如下：</strong></p>
+<ul>
+<li>双核 64-bit RISC-V RV64IMAFDC (RV64GC) CPU / 400MHz（可超频到600MHz）</li>
+<li>双精度 FPU</li>
+<li>8MiB 64bit 片上 SRAM（6MiB通用SRAM+2MiB的AI专用SRAM）</li>
+<li>神经网络处理器（KPU） / 0.8TFLOPS</li>
+<li>音频处理器（APU）</li>
+<li>可编程 IO 阵列 (FPIOA)</li>
+<li>双硬件512点16位复数FFT</li>
+<li>SPI, I2C, UART, I2S, RTC, PWM, 定时器支持</li>
+<li>AES, SHA256 加速器</li>
+<li>直接内存存取控制器 (DMAC)</li>
+</ul>
+<p>芯片采用BGA144封装，28nm制程工艺，芯片功耗低至0.35W，而成本，<strong>只要20RMB</strong>。</p>
+<p>想一下一块Arduino的板子要多少钱……Arduino的性能和外设在K210面前就是个<strong>弟中弟</strong>（摊手）。</p>
+<p><img src="/img/k210-1-3.jpg" alt="img"></p>
+<blockquote>
+<p>芯片架构图</p>
+</blockquote>
+<p><strong>那么K210又能做哪些事情呢？</strong></p>
+<p>多到让你怀疑它是否真的只是个单片机……人脸检测、物体识别、播放视频、声场成像、3D渲染，甚至还能在上面跑FC模拟器玩游戏……</p>
+<p>可以参考下面链接里的视频演示，相信看完你会爱了的：</p>
+<p>Maix能做哪些事 · MaixPy 文档maixpy.sipeed.com</p>
+<p>好了芯片就吹到这里，下面介绍一下市面上已有的一些K210开发板。</p>
+        
+          <a class="article-more-a" href="/2019/09/13/k210-1/#more">继续阅读 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/13/k210-1/">全文 >></a>
         </p>
       
 

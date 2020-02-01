@@ -185,6 +185,97 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-luapad" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/10/luapad/">让STM32运行Lua脚本</a>
+    </h1>
+  
+
+        
+        <a href="/2016/10/10/luapad/" class="archive-article-date">
+  	<time datetime="2016-10-10T12:56:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>突然想起来还做了个小板子一直没时间玩,把资料先放出来...
+</code></pre><p><img src="/img/luapad1.jpg" alt="加载失败,请刷新"></p>
+<blockquote>
+<p>• Lua是一个基于C的小巧的脚本语言,由标准C编写而成，所以可以很方便地移植到几乎在所有操作系统和平台上.Lua和Python有些类似,但在目前所有脚本引擎中，Lua的速度是最快的,这一切都决定了Lua是作为嵌入式脚本的最佳选择.此前非常火的nodeMCU(基于ESP8266)就是运行的Lua脚本.</p>
+<p>• 关于这次做的板子,因为之前有看到过在STM32F4上运行Python的项目(叫做MicroPython,可以自行搜索),可以实现用Python语言来控制单片机.代码直接保存为文本即插即用,相当于可以在SD卡里储存很多小应用程序来选择运行,感觉这个点子还是很有意思的,所以打算做个类似的平台,Python已经有人做了,我就瞄准Lua啦.板子的硬件很早就弄好了,底层的驱动也基本完成,所有文件(STM32固件,原理图,PCB文件)都托管在coding上,有兴趣的可以自己去投板制作,这样既可以一起开发LuaPad,也可以单纯当做STM32的迷你开发板来用.板载的资源有电位器,RGBLed,MPU6050,SD卡槽,以及按键,大部分的IO都已经引出来,coding仓库地址在后文给出链接.</p>
+</blockquote>
+<p><img src="/img/luapad2.jpg" alt="加载失败,请刷新"></p>
+<p><img src="/img/luapad3.jpg" alt="加载失败,请刷新"></p>
+<p><img src="/img/luapad4.jpg" alt="加载失败,请刷新"></p>
+<p>coding仓库地址：<a href="https://git.coding.net/pengzhihui/LuaPad.git" target="_blank" rel="external">LuaPad</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ARM</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">项目</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LUA</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/10/10/luapad/">全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-btapp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -543,130 +634,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-clover" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/23/clover/">蛋黄3.0-智能管家小氪</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/23/clover/" class="archive-article-date">
-  	<time datetime="2016-06-23T02:03:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/img/clover01.jpg" alt="加载失败,请刷新"></p>
-<h2 id="一个废旧的-Android-手机能拿来干什么有趣的事？"><a href="#一个废旧的-Android-手机能拿来干什么有趣的事？" class="headerlink" title="一个废旧的 Android 手机能拿来干什么有趣的事？"></a>一个废旧的 Android 手机能拿来干什么有趣的事？</h2><p>答：<strong>不如做成机器人？</strong></p>
-<blockquote>
-<ul>
-<li><strong>继初代蛋黄和2.0版的Nano之后，蛋黄迎来3.0版更新啦。</strong></li>
-<li>这次基于Android平台制作，融入了视觉、语音、3D、物联网等元素，蛋黄更好玩更实用了~ </li>
-<li>3.0版蛋黄代号为<strong>小氪</strong>，小氪源于英文名<strong>Clover</strong>，Clever+Love表明小氪聪明又可爱，同时Clover意为三叶草，指代第三个版本更新。小氪的构思和制作从6月份开始，断断续续一直到前段时间大概实现了基本的功能，由于精力原因没有加入自平衡效果，所以以后还会有很多改进的。</li>
-</ul>
-</blockquote>
-<p>为什么会想到做用手机来做小氪呢？首先我们来思考一下，<strong>难道没有人觉得智能手机是近乎完美的机器人开发平台吗？</strong></p>
-<p>仔细想想，现在的Android手机具备用作机器人开发平台的几乎一切要素：</p>
-<ul>
-<li>高性能低功耗的嵌入式处理器</li>
-<li>丰富的传感器（陀螺仪、加速度计、光线传感器、红外传感器、麦克风…）</li>
-<li>易于扩展的接口（USB-Host、蓝牙、WiFi）</li>
-<li>方便的调试工具链（ADB、USB、高清大屏）</li>
-<li>基于Linux的Android开源系统</li>
-<li>…</li>
-</ul>
-<p>更何况，<strong>Android的字面意思，就是“机器人”啊！！！</strong></p>
-<p>众所周知，智能手机其实就是一台微型电脑系统，得益于移动互联网玩了命似的快速发展，智能手机的更新迭代速度可谓是一骑绝尘。有市场的地方就有技术突破，这些年移动Soc的升级速度也是紧跟着坐上了快车，如今2019年旗舰的Soc（以高通骁龙855为例）最高主频已经达到了2.84GHz这样恐怖的数字。更何况还有CPU架构的巨大改进以及GPU、NPU、DSP等各种异构能力加成，对于嵌入式硬件来说，实在是非常合适的开发平台。</p>
-<p>如上面所分析，Android智能手机作为机器人开发平台的潜力无限，只是有一个缺点：</p>
-<p><strong>手机它不会动啊。</strong></p>
-<p>是的，作为资深极客，面对这样的问题自然是要脑洞大开，首先让我们来给它设计一个“身体”↓</p>
-<p><img src="/img/clover02.jpg" alt="加载失败,请刷新"></p>
-<blockquote>
-<p>由Rhinocores软件建模</p>
-</blockquote>
-<p>模型使用3D打印制作出来。然后我们需要设计机电模块，来控制Android手机机器人底座的电机，实现自由运动。这里我自己绘制了一块PCB电路板，通过USB接口或者蓝牙与手机通信↓</p>
-<p><img src="/img/clover03.jpg" alt="加载失败,请刷新"></p>
-<blockquote>
-<p>底座的主控电路板</p>
-</blockquote>
-<p>然后Android手机我用的是一台闲置的Moto RAZR M，系统是Android 5.0，当年超窄边框非常经典的机型~</p>
-<p><img src="/img/clover04.jpg" alt="加载失败,请刷新"></p>
-<p>组合到一起，就是这个效果↓</p>
-<p><img src="/img/clover05.jpg" alt="加载失败,请刷新"></p>
-<p>ok，剩下的工作，就是在Android上进行APP开发，充分利用各种传感器和网络功能，以及手机的强大运算能力，来实现我要的效果。最终实现的效果如下↓</p>
-<div style="height: 0;padding-bottom: 61%;position: relative;"><br><iframe width="560" height="315" src="http://player.youku.com/embed/XMTY1MTA3NzA2MA" frameborder="0" allowfullscreen style="position: absolute;height: 100%;width: 100%;"></iframe></div>  
-
-<p><br> </p>
-<p>这其中技术细节太多，就不一一讲解了，感兴趣的可以参考下面的技术路线导图↓</p>
-<p><img src="/img/clover06.jpg" alt="加载失败,请刷新"></p>
-<h3 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h3><p>小氪这个项目是我在16年的时候在学校突发奇想做的一个小项目，基本上用到的很多技术也是现学现用，所以不算非常完美，还有很多可优化的空间；另一个角度上来说，也正是因为做这个项目让我涨了非常多额外的技能点，比如三维建模、Unity开发、Android Native开发等等…</p>
-<p><img src="/img/clover07.jpg" alt="加载失败,请刷新"></p>
-<p>所以我认为的极客精神就是：在脑洞和折腾中不断提升自我，有趣至上~</p>
-<p>个人以后还会经常尝试做一些有趣的东西，如果大家不嫌弃的话也可以关注一下我的知乎（稚晖），有什么好的想法也可以跟我说～不定期更新项目</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">项目</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/23/clover/">全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
@@ -781,10 +748,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">文艺复兴</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ARM</a>
               </li>
              
@@ -797,7 +760,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">文艺复兴</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">谜之DIY</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -813,23 +788,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">怀旧物</a>
+                <a href="javascript:void(0)" class="js-tag color5">FPGA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">FPGA</a>
+                <a href="javascript:void(0)" class="js-tag color4">怀旧物</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -841,11 +808,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LUA</a>
+                <a href="javascript:void(0)" class="js-tag color3">教程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教程</a>
+                <a href="javascript:void(0)" class="js-tag color4">LUA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -853,11 +820,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
+                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
+                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
               </li>
              
               <li class="article-tag-list-item">

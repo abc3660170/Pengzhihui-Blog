@@ -84,6 +84,16 @@ wangyiyun: false
 #4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
 disqus: false
 
+#8、Valine
+valine:
+  appid: guYIgTlqxF5PFg8JbFhmuaSj-gzGzoHsz #Leancloud应用的appId
+  appkey: HVnAVp6RcYTXlgyDcjOfCF6n #Leancloud应用的appKey
+  verify: false #验证码
+  notify: true #评论回复提醒
+  avatar: mm #评论列表头像样式：''/mm/identicon/monsterid/wavatar/retro/hide
+  placeholder: 欢迎留下你的评论~ #评论框占位符
+
+
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
   # 头像上面的背景颜色

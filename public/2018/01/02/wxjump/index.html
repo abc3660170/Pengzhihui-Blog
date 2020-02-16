@@ -402,6 +402,34 @@ var _hmt = _hmt || [];
   
 
   
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var notify = 'true' == true ? true : false;
+    var verify = 'false' == true ? true : false;
+    window.onload = function () {
+        new Valine({
+            el: '#vcomment', // or '.comment'
+            notify: notify,
+            verify: verify,
+            app_id: "guYIgTlqxF5PFg8JbFhmuaSj-gzGzoHsz",
+            app_key: "HVnAVp6RcYTXlgyDcjOfCF6n",
+            placeholder: "欢迎留下你的评论~",
+            avatar: "mm",
+        });
+    }
+</script>
+
+    </section>
+    
+
+  
 
 
           </div>

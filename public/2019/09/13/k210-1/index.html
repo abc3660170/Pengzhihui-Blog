@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://pengzhihui.xyz/img/k210-1-15.jpg">
 <meta property="og:image" content="http://pengzhihui.xyz/img/k210-1-16.jpg">
 <meta property="og:image" content="http://pengzhihui.xyz/img/k210-1-17.jpg">
-<meta property="og:updated_time" content="2020-03-01T10:37:01.252Z">
+<meta property="og:updated_time" content="2020-03-18T08:53:34.223Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="嵌入式AI从入门到放肆【K210篇】-- 硬件与环境">
 <meta name="twitter:description" content="前言关注我的同学都知道，在搞项目方面我一点也不挑食，有啥玩啥，擅于给自己找麻烦。 由于个人本职工作是搞AI的，在不久之前的一个项目中，我用STM32制作了一个小模块，探讨了一下“推理一个实用神经网络最低需要什么样的算力”这个问题。项目的演示视频如下：          基于Cortex-M的M4CNN模块   在那个项目中，我成功在主频只有不到100MHz，sram只有32K的单片机上推理了一个自">
@@ -260,7 +260,7 @@ var _hmt = _hmt || [];
 <p>其实还真有，本篇的主角<strong>K210</strong>就勉强算是一个，这也是我这次选择折腾这个项目的主要原因，接下来请听我仔细分析~</p>
 <h2 id="K210是个啥"><a href="#K210是个啥" class="headerlink" title="K210是个啥"></a><strong>K210是个啥</strong></h2><p>K210是由一家叫做嘉楠的曾经做<strong>挖矿芯片</strong>的公司在去年推出的一款MCU，其特色在于芯片架构中包含了一个自研的神经网络硬件加速器KPU，可以高性能地进行卷积神经网络运算。</p>
 <p><img src="/img/k210-1-2.jpg" alt="img"></p>
-<p>可不要以为MCU的性能就一定比不上高端SoC，至少在AI计算方面，K210的算力其实是相当可观的。根据嘉楠官方的描述，K210的KPU算力有0.8<em>TFLOPS</em> ，作为对比，拥有128个CUDA单元GPU的英伟达Jetson Nano的算力是0.47<em>TFLOPS</em> ；而最新的树莓派4只有不到0.1<em>TFLOPS</em> 。</p>
+<p>可不要以为MCU的性能就一定比不上高端SoC，至少在AI计算方面，K210的算力其实是相当可观的。根据嘉楠官方的描述，K210的KPU算力有0.8<em>TOPS</em> ，作为对比，拥有128个CUDA单元GPU的英伟达Jetson Nano的算力是0.47<em>TFLOPS</em> （浮点）；而最新的树莓派4只有不到0.1<em>TFLOPS</em> 。</p>
 <p>当然了，这个性能跟某些旗舰级别的SoC还是有差距的：A76级别的CPU本身就已经很变态，更何况旗舰SoC上面都会搭载用于AI加速的硬件用于异构运算，比如高通的Hexagon DSP、苹果的Neural Engine、华为的达芬奇架构NPU等等，这些NPU在某些应用下甚至能达到与数百W功耗的桌面级GPU接近的算力（顺便提一下GTX1080Ti的双精度浮点算力是11.3 <em>TFLOPS</em> ），可以说是丧心病狂了。</p>
 <blockquote>
 <p>值得注意的是，芯片的算力不一定和模型推理速度成正比，嵌入式AI的另一个核心是inference框架。对于CPU架构来说，是否使用SIMD（ARM从v7开始就支持NEON指令了）、是否使用多核多线程、是否有高效的卷积实现方式、是否有做汇编优化等等都会极大影响模型运行速度；而对DSP/NPU等硬件架构来说，是否对模型进行量化推理、量化的方式、访存的优化等也会有很大影响。</p>
